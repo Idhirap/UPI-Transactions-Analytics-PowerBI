@@ -216,6 +216,7 @@ The report was successfully published to **Microsoft Power BI Service**.
 
 ## 📁 Repository Structure
 
+```text
 UPI-Transactions-Analytics-PowerBI/
 │
 ├── README.md
@@ -242,7 +243,7 @@ UPI-Transactions-Analytics-PowerBI/
     ├── Bookmark_Balance_Line.png
     ├── Bookmark_Balance_Column.png
     └── PowerBI_Service.png
-
+```
 ---
 
 ## 👩‍💻 Author
