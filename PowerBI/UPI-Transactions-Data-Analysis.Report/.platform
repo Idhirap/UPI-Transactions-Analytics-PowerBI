@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "UPI-Transactions-Data-Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e47abed4-3574-4bc6-b30c-bff47378c144"
+  }
+}

@@ -1,0 +1,211 @@
+table 'UPI Transactions'
+	lineageTag: f6b41c89-b8ee-4824-b29f-fdd8a174f945
+
+	column TransactionID
+		dataType: string
+		lineageTag: 1407991a-6ecd-4aa7-b537-f6d56678938d
+		summarizeBy: none
+		sourceColumn: TransactionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a2cf8c78-03a9-4d02-99b5-4363037ebc26
+		summarizeBy: none
+		sourceColumn: TransactionDate
+
+		variation Variation
+			isDefault
+			relationship: a043dac1-c127-4031-b9d3-79c0296f1403
+			defaultHierarchy: LocalDateTable_f5c57daf-f8cc-4297-8a2e-fe52a214eea6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Amount
+		dataType: double
+		formatString: #,0
+		lineageTag: 23cc885d-f173-41f7-9679-94eb9c6898dc
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column BankNameSent
+		dataType: string
+		lineageTag: b018e067-1653-4876-916e-57ce8af470ce
+		summarizeBy: none
+		sourceColumn: BankNameSent
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankNameReceived
+		dataType: string
+		lineageTag: 884e66e9-a524-4a3a-b7d4-a0a07f4ad067
+		summarizeBy: none
+		sourceColumn: BankNameReceived
+
+		annotation SummarizationSetBy = Automatic
+
+	column RemainingBalance
+		dataType: double
+		formatString: #,0
+		lineageTag: fbb86592-33af-41ea-a78d-c623e1085305
+		summarizeBy: sum
+		sourceColumn: RemainingBalance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column City
+		dataType: string
+		lineageTag: 58f9da49-7229-4c09-9e14-419e37a7c826
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 30abd6ba-ba56-4896-8f48-b34ae1ebcb40
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionType
+		dataType: string
+		lineageTag: e4378ba4-0025-43bb-8367-c802f0a0ab6f
+		summarizeBy: none
+		sourceColumn: TransactionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 9f74d2b4-223b-4a15-bef1-eb6476db1018
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionTime
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 6777d9ef-0862-402d-b661-fbe6e8569215
+		summarizeBy: none
+		sourceColumn: TransactionTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column DeviceType
+		dataType: string
+		lineageTag: 940015ca-dd3f-4fc3-a335-14a44f258837
+		summarizeBy: none
+		sourceColumn: DeviceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentMethod
+		dataType: string
+		lineageTag: 44269e01-34d1-44ce-959d-5dd79b8b5585
+		summarizeBy: none
+		sourceColumn: PaymentMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column MerchantName
+		dataType: string
+		lineageTag: 63e747b7-ba61-453d-9ae7-425a5af7961a
+		summarizeBy: none
+		sourceColumn: MerchantName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Purpose
+		dataType: string
+		lineageTag: d4f4be62-b25e-46ae-bef7-1937f593012f
+		summarizeBy: none
+		sourceColumn: Purpose
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerAge
+		dataType: int64
+		formatString: 0
+		lineageTag: d3860b95-8654-48cd-8882-dcf542d47072
+		summarizeBy: sum
+		sourceColumn: CustomerAge
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentMode
+		dataType: string
+		lineageTag: 6ff4e2f9-499c-4d46-b86e-b1f535eb87b5
+		summarizeBy: none
+		sourceColumn: PaymentMode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 46b65736-4541-44b8-ba4a-847afa52a1cb
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerAccountNumber
+		dataType: string
+		lineageTag: a2822bb1-6d67-4300-9314-5d93e8d5b03b
+		summarizeBy: none
+		sourceColumn: CustomerAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MerchantAccountNumber
+		dataType: string
+		lineageTag: d7cc2517-cb42-4cba-9c12-7bdd1976d3b3
+		summarizeBy: none
+		sourceColumn: MerchantAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Groups' = ```
+			IF('UPI Transactions'[CustomerAge] <=25,"A1",
+			IF('UPI Transactions'[CustomerAge] <=35 ,"A2","A3"))
+			
+			```
+		lineageTag: a28ea050-2174-4015-ad49-3d07e514904a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'UPI Transactions' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\Admin\Desktop\PowerBI\UPI+Transactions.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"TransactionID", type text}, {"TransactionDate", type date}, {"Amount", type number}, {"BankNameSent", type text}, {"BankNameReceived", type text}, {"RemainingBalance", type number}, {"City", type text}, {"Gender", type text}, {"TransactionType", type text}, {"Status", type text}, {"TransactionTime", type datetime}, {"DeviceType", type text}, {"PaymentMethod", type text}, {"MerchantName", type text}, {"Purpose", type text}, {"CustomerAge", Int64.Type}, {"PaymentMode", type text}, {"Currency", type text}, {"CustomerAccountNumber", Int64.Type}, {"MerchantAccountNumber", Int64.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"CustomerAccountNumber", type text}, {"MerchantAccountNumber", type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(Table.TransformColumnTypes(#"Changed Type1", {{"TransactionTime", type text}}, "en-US"), "TransactionTime", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"TransactionTime.1", "TransactionTime.2"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"TransactionTime.1", type date}, {"TransactionTime.2", type time}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"TransactionTime.1"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"TransactionTime.2", "TransactionTime"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
