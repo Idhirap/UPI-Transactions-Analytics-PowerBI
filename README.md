@@ -211,3 +211,50 @@ The report was successfully published to **Microsoft Power BI Service**.
 ### Screenshot
 
 ![Power BI Service](screenshots/PowerBI_Service.png)
+
+---
+
+## 📁 Repository Structure
+
+UPI-Transactions-Analytics-PowerBI/
+│
+├── README.md
+│
+├── dataset/
+│   └── UPI Transactions.xlsx
+│
+├── PBIP_Project/
+│   ├── PowerBI.pbip
+│   ├── PowerBI.Report/
+│   └── PowerBI.SemanticModel/
+│
+└── screenshots/
+    ├── Project_Overview.png
+    ├── PowerQuery_Transformations.png
+    ├── DAX_Age_Groups.png
+    ├── Transaction_Trend_INR.png
+    ├── Transaction_Trend_USD.png
+    ├── Matrix_City_Currency_Analysis.png
+    ├── SyncSlicers_Page1.png
+    ├── SyncSlicers_Page2.png
+    ├── Bookmark_Amount_Line.png
+    ├── Bookmark_Amount_Column.png
+    ├── Bookmark_Balance_Line.png
+    ├── Bookmark_Balance_Column.png
+    └── PowerBI_Service.png
+
+---
+
+## 👩‍💻 Author
+
+**Paridhi Singhal**
+
+Aspiring Data Analyst | SQL | Power BI | Data Visualization
+
+### Connect with Me
+
+- [LinkedIn Profile](https://www.linkedin.com/in/paridhi-singhal123/)
+
+
+---
+
