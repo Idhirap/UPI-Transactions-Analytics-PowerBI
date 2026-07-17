@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This project presents an interactive **UPI Transactions Analytics Dashboard** developed in **Power BI** to analyze transaction trends, payment behavior, remaining balances, and financial activity across different cities and currencies.
+This project presents an interactive **UPI Transactions Analytics Dashboard** developed in **Power BI** to analyze transaction trends, payment behavior, remaining balances, and financial activity across different cities and currencies through interactive visualizations.
 
 The dashboard enables users to monitor monthly transaction trends, compare transaction amounts and remaining balances across cities and currencies, and explore the data using interactive filters, synchronized slicers, bookmarks, drill-down, and hierarchical analysis.
 
@@ -17,7 +17,8 @@ The dashboard enables users to monitor monthly transaction trends, compare trans
 # 📂 Dataset
 
 - **Source:** Excel Workbook
-- **Total Records:** 20,000 UPI Transactions
+- **Total Records:** 20,000 UPI transaction records
+- **Period:** Year 2024
 
 ---
 
@@ -159,7 +160,7 @@ Applied conditional formatting in the Matrix visual to quickly highlight variati
 
 Implemented bookmarks with a bookmark navigator, allowing users to switch between different visualizations without navigating to another report page.
 
-Available views include:
+The bookmark navigator allows users to switch between the following dashboard views:
 
 - Transaction Amount – Line Chart
 - Transaction Amount – Column Chart
@@ -191,13 +192,13 @@ Available views include:
 - Power Query (Data Transformation)
 - Data Profiling
 - DAX Calculated Columns
-- Interactive Dashboards
 - Time-Series Analysis
 - Matrix Visualization
 - Drill Down & Hierarchies
 - Sync Slicers
 - Conditional Formatting
 - Bookmarks & Bookmark Navigator
+- Interactive Dashboard Design
 - Power BI Service Deployment
 
 ---
@@ -250,7 +251,7 @@ UPI-Transactions-Analytics-PowerBI/
 
 **Paridhi Singhal**
 
-Aspiring Data Analyst | SQL | Power BI | Data Visualization
+Aspiring Data Analyst skilled in SQL, Power BI, Excel, and Data Visualization.
 
 ### Connect with Me
 
