@@ -104,11 +104,12 @@ Analyze monthly transaction amounts and remaining account balances across differ
 
 Features included:
 
+- Month displayed as rows
 - City → Currency column hierarchy
 - Drill Down
 - Expand All Down One Level
 - Conditional Formatting
-- Comparative city analysis
+- Comparative city and currency analysis
 
 ### Screenshot
 
